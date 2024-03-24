@@ -11,5 +11,6 @@ This is a Django project for interview process.
 
 Note: The `seed` command automates the process of running migrations and creating a superuser for initial setup.
 
+postman collection backup in "postman collection" folder
 ...
 
