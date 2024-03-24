@@ -1,8 +1,6 @@
-# users/models.py
-
+import datetime
 from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
-import datetime
 
 class UserManager(BaseUserManager):
     def create_user(self, email, **extra_fields):

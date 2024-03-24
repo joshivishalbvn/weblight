@@ -1,17 +1,17 @@
 import datetime
-from rest_framework import status, viewsets
-from rest_framework.response import Response
-from rest_framework.views import APIView
-from .utils import create_otp, get_lead_filter_params
-from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from .models import SmsOtp
 from .task import send_otp , send_email
-from django.contrib.auth import authenticate , get_user_model
 from django.urls import reverse
-from .serializers import PasswordResetSerializer, UserSerializer
-from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.views import APIView
+from rest_framework import status, viewsets
+from rest_framework.response import Response
+from rest_framework.permissions import AllowAny
 from base.permissions import UserRolePermission
+from .utils import create_otp, get_lead_filter_params
 from rest_framework_simplejwt.tokens import RefreshToken
+from django.contrib.auth import authenticate , get_user_model
+from django.contrib.auth.tokens import PasswordResetTokenGenerator
+from .serializers import PasswordResetSerializer, UserSerializer
 
 User = get_user_model()
 

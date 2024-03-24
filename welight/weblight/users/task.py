@@ -3,6 +3,7 @@ from twilio.rest import Client
 from django.conf import settings
 from django.core.mail import EmailMultiAlternatives
 
+@shared_task()
 def send_otp(phone_number, otp):
     try:
         twilio_client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
@@ -18,6 +19,7 @@ def send_otp(phone_number, otp):
         print(f"===================== OTP for {phone_number}: {otp} ==================")
         return False
     
+@shared_task()
 def send_email(email, reset_link):
     try:
         email = EmailMultiAlternatives(
