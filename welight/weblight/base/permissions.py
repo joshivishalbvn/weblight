@@ -15,7 +15,7 @@ class UserRolePermission(permissions.BasePermission):
             return False
         allowed_roles = ['manage', 'admin', 'superadmin']
         if request.user.role in allowed_roles:
-            if request.method in ['POST', 'DELETE']:
+            if request.method in ['POST', 'DELETE','GET', 'PUT', 'PATCH']:
                 return True
         elif request.user.role == 'employee':
             if request.method in ['GET', 'PUT', 'PATCH']:
