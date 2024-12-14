@@ -1,7 +1,3 @@
-# weblight
-
-This is a Django project for interview process.
-
 ## Setup Instructions
 
 1. Clone the repository.
